@@ -1,0 +1,109 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="User"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-12-10 05:37:00 PM"/>
+        <attribute name="created" value="VXNlcjtXSU5ET1dTLUdRQk5HTUo7MjAyMS0xMi0wODswMzowNzo1NCBQTTsyODEy"/>
+        <attribute name="edited" value="VXNlcjtXSU5ET1dTLUdRQk5HTUo7MjAyMS0xMi0wODswMzoyNzo0OCBQTTszO0xFTk9WTztERVNLVE9QLVVJNTlGSkE7MjAyMS0xMS0zMDswOTowNDowMSBBTTtZb2hhbiBQZXJtYW5hLmZwcmc7NzU1Mw=="/>
+        <attribute name="edited" value="VXNlcjtXSU5ET1dTLUdRQk5HTUo7MjAyMS0xMi0xMDswNTozNzowMCBQTTs1OzI5MTM="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="bil" type="Integer" array="False" size=""/>
+            <output expression="&quot;Masukkan bilangan bulat yang akan di ketahui !!&quot;" newline="True"/>
+            <input variable="bil"/>
+            <if expression="bil = 0">
+                <then>
+                    <output expression="&quot;nol&quot;" newline="True"/>
+                </then>
+                <else>
+                    <output expression="terbilang(bil)" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+    <function name="terbilang" type="String" variable="y">
+        <parameters>
+            <parameter name="x" type="Integer" array="False"/>
+        </parameters>
+        <body>
+            <declare name="y" type="String" array="False" size=""/>
+            <declare name="angka" type="String" array="True" size="10"/>
+            <assign variable="angka[0]" expression="&quot; &quot;"/>
+            <assign variable="angka[1]" expression="&quot;satu&quot;"/>
+            <assign variable="angka[2]" expression="&quot;dua&quot;"/>
+            <assign variable="angka[3]" expression="&quot;tiga&quot;"/>
+            <assign variable="angka[4]" expression="&quot;empat&quot;"/>
+            <assign variable="angka[5]" expression="&quot;lima&quot;"/>
+            <assign variable="angka[6]" expression="&quot;enam&quot;"/>
+            <assign variable="angka[7]" expression="&quot;tujuh&quot;"/>
+            <assign variable="angka[8]" expression="&quot;delapan&quot;"/>
+            <assign variable="angka[9]" expression="&quot;sembilan&quot;"/>
+            <if expression="x &lt; 10">
+                <then>
+                    <assign variable="y" expression="angka[x]"/>
+                </then>
+                <else>
+                    <if expression="x &lt; 20">
+                        <then>
+                            <if expression="x = 10">
+                                <then>
+                                    <assign variable="y" expression="&quot;sepuluh&quot;"/>
+                                </then>
+                                <else>
+                                    <if expression="x=11">
+                                        <then>
+                                            <assign variable="y" expression="&quot;sebelas&quot;"/>
+                                        </then>
+                                        <else>
+                                            <assign variable="y" expression="terbilang(x-10) &amp; &quot; belas&quot;"/>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </then>
+                        <else>
+                            <if expression="x &lt; 100">
+                                <then>
+                                    <assign variable="y" expression="terbilang(x/10) &amp;&quot; puluh &quot;&amp; terbilang (x % 10)"/>
+                                </then>
+                                <else>
+                                    <if expression="x &lt; 200">
+                                        <then>
+                                            <assign variable="y" expression="&quot;seratus &quot; &amp; terbilang (x % 100)"/>
+                                        </then>
+                                        <else>
+                                            <if expression="x &lt; 1000">
+                                                <then>
+                                                    <assign variable="y" expression="terbilang (x/100) &amp; &quot; ratus &quot; &amp; terbilang (x % 100)"/>
+                                                </then>
+                                                <else>
+                                                    <if expression="x &lt; 1000000">
+                                                        <then>
+                                                            <assign variable="y" expression="terbilang (x/1000) &amp; &quot; ribu&quot; &amp; terbilang (x % 1000)"/>
+                                                        </then>
+                                                        <else>
+                                                            <if expression="x &lt; 1000000000">
+                                                                <then>
+                                                                    <assign variable="y" expression="terbilang(x / 1000000) &amp; &quot; juta&quot; &amp; terbilang(x % 1000000)"/>
+                                                                </then>
+                                                                <else/>
+                                                            </if>
+                                                        </else>
+                                                    </if>
+                                                </else>
+                                            </if>
+                                        </else>
+                                    </if>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
